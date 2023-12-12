@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Chapter10 {
@@ -13,9 +12,10 @@ public class Chapter10 {
         list.add(new Task(LocalDate.of(2021, 11, 9), "スクールの課題を解く", false));
         
         System.out.println("未完了のタスクの個数は" + list.size());
-        Collections.sort(list);
-        for (Task l : list) {
-        	System.out.println(l.getDate() + " " + l.getTask());
-        }
+//        Collections.sort(list);
+//        for (Task l : list) {
+//        	System.out.println(l.getDate() + " " + l.getTask());
+//        }
+        list.stream().sorted((f1, f2) -> f1.compareTo(f2)).forEach(System.out::println);
 	}
 }
